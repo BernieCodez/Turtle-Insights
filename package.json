@@ -1,8 +1,15 @@
 {
+  "name": "html-css",
+  "version": "1.0.0",
+  "description": "Guys. Turtles.",
+  "main": "index.html",
   "scripts": {
-    "start": "servor --reload"
+    "start": "serve"
   },
-  "dependencies": {
-    "servor": "^4.0.2"
+  "keywords": ["html", "css"],
+  "author": "BernieCodez",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "11.2.0"
   }
 }

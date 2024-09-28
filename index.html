@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Ultimate Cipher</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <script>
       const savedTheme = localStorage.getItem('theme') || 'water'; // Default to water if no theme is saved
 
-    document.write(`<link id="theme-link" rel="stylesheet" href="/${savedTheme}.css">`);
+      document.write(
+        `<link id="theme-link" rel="stylesheet" href="${savedTheme}.css">`
+      );
     </script>
-
   </head>
 
   <body>
@@ -107,7 +108,7 @@
       <button onclick='loadTheme("beach")'>Beach Theme</button>
     </div>
     <script>
-      function loadTheme(theme){
+      function loadTheme(theme) {
         localStorage.setItem('theme', theme);
         window.location.reload();
       }
