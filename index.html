@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ultimate Cipher</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script>
+      const savedTheme = localStorage.getItem('theme') || 'water'; // Default to water if no theme is saved
+
+    document.write(`<link id="theme-link" rel="stylesheet" href="/${savedTheme}.css">`);
+    </script>
+
+  </head>
+
+  <body>
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxk-2o8ikC3IYp1QI8IBW_gxtcXCsNN6WonH2QkbNi8FmSVI0xIVivMcoLclvzTnWOxVY&usqp=CAU"
+      class="water"
+      alt="ocean"
+    />
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHhVCfnjIBFvmvlaUxZ2hDExxXk6jtfLWT-w&s"
+      class="beach"
+      alt="beach"
+    />
+    <div class="square">
+      <h1>Turtle Insights</h1>
+      <h2>Intro</h2>
+      <p>
+        Turtles are one of the most amazing creatures God gave us. This is why
+        Turtle Insights have poured in hours of research about them. You'll find
+        every fact you need about Sea Turtles like their habitats, lifestyle,
+        predators and prey, and so much more! All the information we use comes
+        from very reliable sources. Don't believe us? You can go to the sources
+        page to see where we got our information.
+      </p>
+      <h2>Shells</h2>
+      <p>
+        The carapace and plastron both have two layers. One layer is flat bones
+        that merge with the turtle's ribs as it grows. The other layer consists
+        of scutes which protect the turtle. For most turtles, the scutes are
+        made of keratin. But for Leatherbacks they have a rubbery material
+        called caraplace with leather to protect them. A turtle shell is also
+        the home to small organisms called epibionts. They are small creatures
+        like algae, small crabs, barnacles, etc. There are over 100 epibionts
+        discovered living on a sea turtle's shell. The weight of these creatures
+        will weigh the turtle down but luckily certain fish enjoy eating the
+        epibionts making it a win win for both sides. The turtle gets a clean
+        shell and the fish gets a nice meal.
+      </p>
+      <h2>Senses</h2>
+      <h3>Sight</h3>
+      <p>
+        Turtles have vision that has adapted to both the land and the water
+        although since a turtle spends most of its time in water, its vision
+        underwater is better compared to land. They have perfect vision
+        underwater and a slight nearvision on land. This is because their eyes
+        have flat corneas and a nearly spherical lens. Interestingly, turtle
+        eyes are more adapted to bright light instead of the dark. If they need
+        to feed in the depths or in the dark they rely on seeing the
+        bioluminesce of their prey to feed. A study in 2012 showed that green
+        sea turtles and loggerhead turtles both have the cells required for
+        seeing color but not many studies have been conducted to show whether
+        they can distinguish the color they see.
+      </p>
+      <h3>Hearing</h3>
+      <p>
+        Turtle's ears are so small they can't be seen on the outside of its
+        head. Their ear allows them to hear vibrations traveling through the
+        water. Studies suggest turtles also have the ability to detect low
+        frequency sounds because of a protective layer of skin over their ear
+        called tympanum. Underneath the tympanum is a layer of fat only sea
+        turtles have. Scientists believe the fat channels the low frequency
+        sound waves into the ear and is what allows turtles to hear the loew
+        frequency sounds.
+      </p>
+      <h3>Touch</h3>
+      <p>
+        An interesting fact about sea turtles is that they have sensory nerves
+        inside of their shell that detect pressure. This means when their shells
+        are touched they can detect it. Although scientists believe they can't
+        detect pain. Turtles have sensory nerves in their head and flippers.
+      </p>
+      <h3>Smell</h3>
+      <p>
+        Turtles have an acute sense of smell. This combined with their sight
+        allows them to easily track their prey. Scientists think that female
+        turtles also use their sense of smell to navigate to a beach and lay
+        eggs.
+      </p>
+      <h3>Magnetic sense</h3>
+      <p>
+        Turtles have a unique ability called magnetic sense. It allows them to
+        detect magnetic fields that they use to navigate. Scientists aren't
+        quite sure how it works. It is a turtle's equivalent to a compass.
+      </p>
+      <h2>Sources</h2>
+      <a
+        href="#"
+        onclick="window.location.href='https://ocean.si.edu/ocean-life/reptiles/sea-turtles';"
+        >Sea Turtles | Smithsonian Ocean</a
+      >
+      <h2>Theme Changer</h2>
+      <button onclick='loadTheme("water")'>Water Theme</button>
+      <button onclick='loadTheme("beach")'>Beach Theme</button>
+    </div>
+    <script>
+      function loadTheme(theme){
+        localStorage.setItem('theme', theme);
+        window.location.reload();
+      }
+      function setSquareScale() {
+        const screenSize = window.innerWidth; // or innerHeight depending on your needs
+        const squareScale = screenSize / 1200; // You can adjust this divisor based on your design
+        document.documentElement.style.setProperty(
+          '--square-scale',
+          squareScale
+        );
+      }
+
+      setSquareScale();
+      window.addEventListener('resize', setSquareScale);
+    </script>
+  </body>
+</html>
