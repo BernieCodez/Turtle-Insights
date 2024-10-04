@@ -13,7 +13,7 @@ body {
   box-sizing: border-box;
 }
 .square {
-  width: 900px;
+  width: 800px;
   height: 420px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -26,7 +26,6 @@ body {
   border-radius: 1rem;
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.7);
   transform: scale(var(--square-scale, 1));
-  padding-top: 490px;
   z-index: 5;
 }
 h1 {
@@ -98,4 +97,45 @@ button:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+/* ---------------------- */
+/* NAVIGATION BAR */
+/* ---------------------- */
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #424242;
+  overflow: hidden;
+  position: fixed;
+  z-index: 111111;
+  top: 0;
+  opacity: 0;
+  width: 100vw;
+  transition: 0.3s;
+}
+.topnav:hover{
+  opacity: 100;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #f1e4d6;
+  color: #424242;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #f0d1af;
+  color: #424242;
 }

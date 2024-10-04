@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ultimate Cipher</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="media.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <script>
+      const savedTheme = localStorage.getItem('theme') || 'water'; // Default to water if no theme is saved
+
+      document.write(
+        `<link id="theme-link" rel="stylesheet" href="${savedTheme}.css">`
+      );
+    </script>
+  </head>
+
+  <body>
+    <!-- navigation bar -->
+    <div class="topnav"> 
+      <a href="index.html">Home</a>
+      <a class="active" href="settings.html">Settings</a>
+      <a href="about.html">About</a>
+    </div>
+
+
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxk-2o8ikC3IYp1QI8IBW_gxtcXCsNN6WonH2QkbNi8FmSVI0xIVivMcoLclvzTnWOxVY&usqp=CAU"
+      class="water"
+      alt="ocean"
+    />
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHhVCfnjIBFvmvlaUxZ2hDExxXk6jtfLWT-w&s"
+      class="beach"
+      alt="beach"
+    />
+    <div class="square">
+      <h1>Turtle Insights</h1>
+      <h2>Theme Changer</h2>
+      <button onclick='loadTheme("water")'>Water Theme</button>
+      <button onclick='loadTheme("beach")'>Beach Theme</button>
+      <br>
+      <div class="footer" style="justify-content: center; align-items: center;">
+        <hr style="border-top: 1px solid #bbb">
+        <img src="media.png" style="width: 16px; height: 16px; display: inline"/>
+        <p style="font-size: 0.5rem; display: inline;">Turtle Insights</p>
+        <p style="font-size: 0.4rem">Designed and created by Bernie Chen</p>
+      </div>
+    </div>
+    <script>
+      function loadTheme(theme) {
+        localStorage.setItem('theme', theme);
+        window.location.reload();
+      }
+      function setSquareScale() {
+        const screenSize = window.innerWidth; // or innerHeight depending on your needs
+        const squareScale = screenSize / 1200; // You can adjust this divisor based on your design
+        document.documentElement.style.setProperty(
+          '--square-scale',
+          squareScale
+        );
+      }
+
+      setSquareScale();
+      window.addEventListener('resize', setSquareScale);
+      document.addEventListener('DOMContentLoaded', function () {
+  const square = document.querySelector('.square');
+
+  function checkOverflow() {
+    if (square.scrollHeight > square.clientHeight) {
+      // Content is overflowing, disable justify-content: center;
+      square.style.justifyContent = 'flex-start'; // Align content to the top
+    } else {
+      // Content fits, keep it centered
+      square.style.justifyContent = 'center';
+    }
+  }
+
+  // Initial check
+  checkOverflow();
+
+  // Optionally, recheck if the window is resized
+  window.addEventListener('resize', checkOverflow);
+});
+
+    </script>
+  </body>
+</html>
