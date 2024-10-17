@@ -5,35 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Ultimate Cipher</title>
     <link rel="icon" type="image/png" sizes="32x32" href="media.png" />
+    <!-- load favicon -->
     <link rel="manifest" href="/site.webmanifest" />
     <script>
-      const savedTheme = localStorage.getItem('theme') || 'water'; // Default to water if no theme is saved
-
+      const savedTheme = localStorage.getItem('theme') || 'water'; 
       document.write(
         `<link id="theme-link" rel="stylesheet" href="${savedTheme}.css">`
       );
+      //loads theme
+      //grabs the saved theme from local storage and sets the css to it effectilvely changing the theme.
     </script>
   </head>
 
   <body>
     <!-- navigation bar -->
     <div class="topnav"> 
-      <a class="active" href="index">Home</a>
-      <a href="settings">Settings</a>
-      <a href="about">About</a>
+      <a class="active" href="index.html">Home</a>
+      <a href="settings.html">Settings</a>
+      <a href="about.html">About</a>
     </div>
 
-
+    <!-- image container for the ocean image -->
     <img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxk-2o8ikC3IYp1QI8IBW_gxtcXCsNN6WonH2QkbNi8FmSVI0xIVivMcoLclvzTnWOxVY&usqp=CAU"
       class="water"
       alt="ocean"
     />
+    <!-- image container for the beach image -->
     <img
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHhVCfnjIBFvmvlaUxZ2hDExxXk6jtfLWT-w&s"
       class="beach"
       alt="beach"
     />
+    <!-- divider with all the content inside -->
     <div class="square">
       <h1>Turtle Insights</h1>
       <h2>Intro</h2>
@@ -121,22 +125,24 @@
     
 
     <script>
-
+      //function to resize the square depending on windo size
       function setSquareScale() {
-        const screenSize = window.innerWidth; // or innerHeight depending on your needs
-        const squareScale = screenSize / 1200; // You can adjust this divisor based on your design
+        const screenSize = window.innerWidth; 
+        const squareScale = screenSize / 1200; 
         document.documentElement.style.setProperty(
           '--square-scale',
           squareScale
         );
       }
 
-      setSquareScale();
+      setSquareScale(); //triggers the function
       window.addEventListener('resize', setSquareScale);
 
       document.addEventListener('DOMContentLoaded', function () {
   const square = document.querySelector('.square');
 
+
+  //allow scrolling if the content overflows
   function checkOverflow() {
     if (square.scrollHeight > square.clientHeight) {
       // Content is overflowing, disable justify-content: center;
@@ -150,7 +156,7 @@
   // Initial check
   checkOverflow();
 
-  // Optionally, recheck if the window is resized
+  // Recheck if the window is resized
   window.addEventListener('resize', checkOverflow);
 });
 
